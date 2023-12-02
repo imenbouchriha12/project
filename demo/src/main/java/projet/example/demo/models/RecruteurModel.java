@@ -1,12 +1,16 @@
 package projet.example.demo.models;
 
-import java.sql.Date;
+        import java.sql.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+        import jakarta.persistence.Entity;
+        import jakarta.persistence.GeneratedValue;
+        import jakarta.persistence.GenerationType;
+        import jakarta.persistence.Id;
+        import jakarta.persistence.Table;
+        import jakarta.persistence.*;
+
+        import java.sql.Date;
+
 
 @Entity
 @Table(name="Recruteur")
@@ -18,9 +22,9 @@ public class RecruteurModel {
     private String prenom;
     private String email;
     private String mdp;
-    private String Secteur;
+    private String secteur;
     private int tel;
-    private String photo;
+    private byte[] photo;
     private Date date_naissence;
     private String description;
     private String Entreprise;
@@ -71,11 +75,11 @@ public class RecruteurModel {
     }
 
     public String getSecteur() {
-        return this.Secteur;
+        return this.secteur;
     }
 
     public void setSecteur(String Secteur) {
-        this.Secteur = Secteur;
+        this.secteur = Secteur;
     }
 
     public int getTel() {
@@ -86,11 +90,11 @@ public class RecruteurModel {
         this.tel = tel;
     }
 
-    public String getPhoto() {
+    public byte[] getPhoto() {
         return this.photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 

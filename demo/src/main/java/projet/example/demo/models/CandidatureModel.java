@@ -9,26 +9,26 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Condidature")
-public class CondidatureModel {
+@Table(name="Candidature")
+public class CandidatureModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Condidature;
+    private int id_condidature;
     private Date date;
-    private int Statut;
-    private String Cv;
+    private int statut;
+    private byte[] cv;
 
 
-    public CondidatureModel() {
+    public CandidatureModel() {
     }
 
 
-    public int getId_Condidature() {
-        return this.id_Condidature;
+    public int getId_condidature() {
+        return this.id_condidature;
     }
 
     public void setId_Condidature(int id_Condidature) {
-        this.id_Condidature = id_Condidature;
+        this.id_condidature = id_Condidature;
     }
 
     public Date getDate() {
@@ -40,19 +40,19 @@ public class CondidatureModel {
     }
 
     public int getStatut() {
-        return this.Statut;
+        return this.statut;
     }
 
     public void setStatut(int Statut) {
-        this.Statut = Statut;
+        this.statut = Statut;
     }
 
-    public String getCv() {
-        return this.Cv;
+    public byte[] getCv() {
+        return this.cv;
     }
 
-    public void setCv(String Cv) {
-        this.Cv = Cv;
+    public void setCv(byte[] Cv) {
+        this.cv = Cv;
     }
     
 
