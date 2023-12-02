@@ -1,10 +1,12 @@
-package com.project.demo.models;
+package projet.example.demo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
+import java.util.Date;
 
 @Entity
 @Table(name="Recruteur")
@@ -18,11 +20,11 @@ public class RecruteurModel {
     private String mdp;
     private String Secteur;
     private int tel;
-    private blob photo;
-    private date date_naissence;
+    private byte[] photo;
+    private Date date_naissence;
     private String description;
     private String Entreprise;
-    private date date_inscrit;
+    private Date date_inscrit;
 
 
     public RecruteurModel() {
@@ -84,19 +86,19 @@ public class RecruteurModel {
         this.tel = tel;
     }
 
-    public blob getPhoto() {
+    public byte[] getPhoto() {
         return this.photo;
     }
 
-    public void setPhoto(blob photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 
-    public date getDate_naissence() {
+    public Date getDate_naissence() {
         return this.date_naissence;
     }
 
-    public void setDate_naissence(date date_naissence) {
+    public void setDate_naissence(Date date_naissence) {
         this.date_naissence = date_naissence;
     }
 
@@ -116,11 +118,11 @@ public class RecruteurModel {
         this.Entreprise = Entreprise;
     }
 
-    public date getDate_inscrit() {
+    public Date getDate_inscrit() {
         return this.date_inscrit;
     }
 
-    public void setDate_inscrit(date date_inscrit) {
+    public void setDate_inscrit(Date date_inscrit) {
         this.date_inscrit = date_inscrit;
     }
 
