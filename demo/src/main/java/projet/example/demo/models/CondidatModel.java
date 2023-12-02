@@ -1,6 +1,8 @@
-package com.project.demo.models;
+package projet.example.demo.models;
 
 
+
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +24,7 @@ public class CondidatModel {
     private String secteur;
     private Date date_naissence;
     private String Description;
-    private blob photo;
+    private String photo;
     
 
     public CondidatModel() {
@@ -100,11 +102,11 @@ public class CondidatModel {
         this.Description = Description;
     }
 
-    public blob getPhoto() {
+    public String getPhoto() {
         return this.photo;
     }
 
-    public void setPhoto(blob photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 

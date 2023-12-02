@@ -1,4 +1,4 @@
-package com.project.demo.services;
+package projet.example.demo.services;
 
 import java.util.Optional;
 
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.demo.models.CondidatModel;
-import com.project.demo.repository.CondidatRepository;
+import  projet.example.demo.models.CondidatModel;
+import projet.example.demo.repository.CondidatRepository;
 
 
 @Service

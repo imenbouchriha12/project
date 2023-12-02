@@ -1,4 +1,6 @@
-package com.project.demo.models;
+package projet.example.demo.models;
+
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +16,7 @@ public class CondidatureModel {
     private int id_Condidature;
     private Date date;
     private int Statut;
-    private blob Cv;
+    private String Cv;
 
 
     public CondidatureModel() {
@@ -45,11 +47,11 @@ public class CondidatureModel {
         this.Statut = Statut;
     }
 
-    public blob getCv() {
+    public String getCv() {
         return this.Cv;
     }
 
-    public void setCv(blob Cv) {
+    public void setCv(String Cv) {
         this.Cv = Cv;
     }
     

@@ -1,4 +1,4 @@
-package com.project.demo.controller;
+package projet.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.demo.models.CondidatModel;
-import com.project.demo.services.CondidatService;
+import projet.example.demo.models.*;
+import projet.example.demo.services.CondidatService;
 import java.util.List;
 
 @RestController
