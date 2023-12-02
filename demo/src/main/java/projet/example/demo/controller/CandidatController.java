@@ -7,25 +7,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import projet.example.demo.services.CandidatService;
-import projet.example.demo.models.CandidatModel;
 
+import projet.example.demo.models.*;
+import projet.example.demo.services.CondidatService;
 import java.util.List;
 
 @RestController
-public class CandidatController {
+public class CondidatController {
     @Autowired
-  CandidatService service;
+    CondidatService service;
     @RequestMapping(value="/Condidats", method=RequestMethod.GET)
-    List<CandidatModel> getAll(){
+    List<CondidatModel> getAll(){
         return service.getAll();
     }
-    @RequestMapping(value = "/Condidats/{id}",method = RequestMethod.GET)
-    CandidatModel getCondidatbyid(@PathVariable Long id){
+    @RequestMapping(value = "/Condidats/{id}",method = RequestMethod.GET)   
+     CondidatModel getCondidatbyid(@PathVariable Long id){
         return service.getCondidat(id);
      }
      @PostMapping("/addCondidat")
-    CandidatModel addCondidat(@RequestBody CandidatModel Condidat){
+     CondidatModel addCondidat(@RequestBody CondidatModel Condidat){
         return service.addCondidat(Condidat);
      }
     }

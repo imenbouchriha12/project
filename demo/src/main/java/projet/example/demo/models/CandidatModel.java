@@ -2,13 +2,17 @@ package projet.example.demo.models;
 
 
 
-import jakarta.persistence.*;
-
 import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name="Condidat")
-public class CandidatModel {
+public class CondidatModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_condidat;
@@ -20,10 +24,10 @@ public class CandidatModel {
     private String secteur;
     private Date date_naissence;
     private String Description;
-    @Lob
-    private byte[] photo;
+    private String photo;
+    
 
-    public CandidatModel() {
+    public CondidatModel() {
     }
 
     public int getId_condidat() {
@@ -98,11 +102,11 @@ public class CandidatModel {
         this.Description = Description;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return this.photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 

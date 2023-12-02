@@ -1,4 +1,6 @@
-package com.project.demo.models;
+package projet.example.demo.models;
+
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,14 +9,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Offre_emploie")
-public class Offre_emploieModel {
+@Table(name="OffreEmploie")
+public class OffreEmploieModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_offre;
     private String titre;
     private double description;
-    private date date_expiration;
+    private Date date_expiration;
     private String lieu;
     private  String nom_societe;
     private int nbr_max_condidat;
@@ -22,7 +24,7 @@ public class Offre_emploieModel {
     private String niveau_etude;
     private int etat;
 
-    public Offre_emploieModel() {
+    public OffreEmploieModel() {
     }
 
     public int getId_offre() {
@@ -49,11 +51,11 @@ public class Offre_emploieModel {
         this.description = description;
     }
 
-    public date getDate_expiration() {
+    public Date getDate_expiration() {
         return this.date_expiration;
     }
 
-    public void setDate_expiration(date date_expiration) {
+    public void setDate_expiration(Date date_expiration) {
         this.date_expiration = date_expiration;
     }
 

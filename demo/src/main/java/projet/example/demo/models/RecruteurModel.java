@@ -1,12 +1,12 @@
 package projet.example.demo.models;
 
+import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
-import java.util.Date;
 
 @Entity
 @Table(name="Recruteur")
@@ -20,7 +20,7 @@ public class RecruteurModel {
     private String mdp;
     private String Secteur;
     private int tel;
-    private byte[] photo;
+    private String photo;
     private Date date_naissence;
     private String description;
     private String Entreprise;
@@ -86,11 +86,11 @@ public class RecruteurModel {
         this.tel = tel;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return this.photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 

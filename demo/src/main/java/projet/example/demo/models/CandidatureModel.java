@@ -1,22 +1,25 @@
 package projet.example.demo.models;
 
-import jakarta.persistence.*;
+import java.sql.Date;
 
-import java.sql.Blob;
-import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name="Condidature")
-public class CandidatureModel {
+public class CondidatureModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_Condidature;
     private Date date;
     private int Statut;
-    @Lob
-    private byte[] cv;
+    private String Cv;
 
-    public CandidatureModel() {
+
+    public CondidatureModel() {
     }
 
 
@@ -44,12 +47,12 @@ public class CandidatureModel {
         this.Statut = Statut;
     }
 
-    public byte[] getCv() {
-        return this.cv;
+    public String getCv() {
+        return this.Cv;
     }
 
-    public void setCv(byte[] Cv) {
-        this.cv = Cv;
+    public void setCv(String Cv) {
+        this.Cv = Cv;
     }
     
 
