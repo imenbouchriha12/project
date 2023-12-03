@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 public class CandidatModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_condidat;
+    private Long id_condidat;
     private String nom;
     private String prenom;
     private String email;
@@ -30,11 +30,11 @@ public class CandidatModel {
     public CandidatModel() {
     }
 
-    public int getId_condidat() {
+    public Long getId_condidat() {
         return this.id_condidat;
     }
 
-    public void setId_condidat(int id_condidat) {
+    public void setId_condidat(Long id_condidat) {
         this.id_condidat = id_condidat;
     }
 

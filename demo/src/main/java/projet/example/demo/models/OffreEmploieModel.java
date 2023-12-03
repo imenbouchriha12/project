@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 public class OffreEmploieModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_offre;
+    private Long id_offre;
     private String titre;
     private double description;
     private Date date_expiration;
@@ -27,11 +27,11 @@ public class OffreEmploieModel {
     public OffreEmploieModel() {
     }
 
-    public int getId_offre() {
+    public Long getId_offre() {
         return this.id_offre;
     }
 
-    public void setId_offre(int id_offre) {
+    public void setId_offre(Long id_offre) {
         this.id_offre = id_offre;
     }
 
