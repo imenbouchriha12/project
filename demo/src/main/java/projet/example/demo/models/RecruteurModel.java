@@ -17,7 +17,7 @@ package projet.example.demo.models;
 public class RecruteurModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_recruteur;
+    private Long id_recruteur;
     private String nom;
     private String prenom;
     private String email;
@@ -34,11 +34,11 @@ public class RecruteurModel {
     public RecruteurModel() {
     }
 
-    public int getId_recruteur() {
+    public Long getId_recruteur() {
         return this.id_recruteur;
     }
 
-    public void setId_recruteur(int id_recruteur) {
+    public void setId_recruteur(Long id_recruteur) {
         this.id_recruteur = id_recruteur;
     }
 
