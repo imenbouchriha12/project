@@ -9,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name="Candidat")
@@ -20,11 +22,24 @@ public class CandidatModel {
     private String prenom;
     private String email;
     private String mdp;
-    private int tel;
+    private Long tel;
     private String secteur;
-    private Date date_naissence;
+     @Temporal(TemporalType.DATE)
+    private Date date_naissance = new Date(); 
     private String Description;
+    private String photoBase64;
     private byte[] photo;
+
+
+
+    public String getPhotoBase64() {
+        return photoBase64;
+    }
+
+    public void setPhotoBase64(String photoBase64) {
+        this.photoBase64 = photoBase64;
+    }
+
     
 
     public CandidatModel() {
@@ -70,11 +85,11 @@ public class CandidatModel {
         this.mdp = mdp;
     }
 
-    public int getTel() {
+    public Long getTel() {
         return this.tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(Long tel) {
         this.tel = tel;
     }
 
@@ -87,11 +102,11 @@ public class CandidatModel {
     }
 
     public Date getDate_naissence() {
-        return this.date_naissence;
+        return this.date_naissance;
     }
 
-    public void setDate_naissence(Date date_naissence) {
-        this.date_naissence = date_naissence;
+    public void setDate_naissence(Date date_naissance) {
+        this.date_naissance = date_naissance;
     }
 
     public String getDescription() {
