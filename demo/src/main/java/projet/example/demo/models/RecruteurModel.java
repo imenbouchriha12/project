@@ -8,7 +8,6 @@ package projet.example.demo.models;
         import jakarta.persistence.Id;
         import jakarta.persistence.Table;
         import jakarta.persistence.*;
-
         import java.sql.Date;
 
 

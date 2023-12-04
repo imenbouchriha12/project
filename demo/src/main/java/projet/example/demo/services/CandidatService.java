@@ -16,7 +16,7 @@ public class CandidatService {
     public List<CandidatModel> getAll(){
         return rep.findAll();
     }
-    public CandidatModel getCondidat(Long id){
+    public CandidatModel getCandidat(Long id){
         Optional<CandidatModel> oCondidat;
         oCondidat = rep.findById(id);
         if(oCondidat.isPresent()){
@@ -27,7 +27,7 @@ public class CandidatService {
         }
     }
     
-    public CandidatModel addCondidat(CandidatModel Candidat){
+    public CandidatModel addCandidat(CandidatModel Candidat){
         return rep.save(Candidat);
     }
 }
