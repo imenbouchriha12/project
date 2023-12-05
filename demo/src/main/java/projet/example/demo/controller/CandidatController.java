@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import projet.example.demo.models.*;
 import projet.example.demo.services.CandidatService;
 
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -37,4 +38,21 @@ public class CandidatController {
 
         return service.addCandidat(Candidat);
      }
+     @PostMapping("/loginCandidat")
+     public CandidatModel checkUser(@RequestBody CandidatModel candidat) {
+         //TODO: process POST request
+         List<CandidatModel> candidats=service.getAll();
+         for (CandidatModel candidatModel : candidats) {
+            if(candidatModel.getEmail().equals(candidat.getEmail()) && candidatModel.getMdp().equals(candidat.getMdp())){
+                 CandidatModel loggedCandidat=candidatModel;
+            loggedCandidat.setMdp("****");
+              return loggedCandidat;
+
+            }
+         }
+       
+         return null ;
+
+     }
+     
     }
