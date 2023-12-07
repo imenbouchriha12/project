@@ -26,6 +26,8 @@ public class CandidatModel {
     private String secteur;
      @Temporal(TemporalType.DATE)
     private Date date_naissance = new Date(); 
+     @Temporal(TemporalType.DATE)
+    private Date date_inscri = new Date();
     private String Description;
     private String photoBase64;
     private byte[] photo;
