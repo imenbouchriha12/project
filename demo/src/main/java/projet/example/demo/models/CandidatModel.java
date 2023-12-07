@@ -34,8 +34,6 @@ public class CandidatModel {
         private String photoBase64;
     private byte[] photo;
     private String descPhoto;
-    @Temporal(TemporalType.DATE)
-    private Date date_inscri= new Date(); 
 
 
     public Date getDate_inscri() {
