@@ -4,6 +4,7 @@ package projet.example.demo.models;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,10 +30,29 @@ public class CandidatModel {
      @Temporal(TemporalType.DATE)
     private Date date_inscri = new Date();
     private String Description;
-    private String photoBase64;
+    @Column(columnDefinition="MEDIUMTEXT")
+        private String photoBase64;
     private byte[] photo;
+    private String descPhoto;
+    @Temporal(TemporalType.DATE)
+    private Date date_inscri= new Date(); 
 
 
+    public Date getDate_inscri() {
+        return date_inscri;
+    }
+
+    public void setDate_inscri(Date date_inscri) {
+        this.date_inscri = date_inscri;
+    }
+
+    public String getDescPhoto() {
+        return descPhoto;
+    }
+
+    public void setDescPhoto(String descPhoto) {
+        this.descPhoto = descPhoto;
+    }
 
     public String getPhotoBase64() {
         return photoBase64;

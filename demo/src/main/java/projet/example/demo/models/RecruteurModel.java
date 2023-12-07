@@ -1,14 +1,8 @@
 package projet.example.demo.models;
 
-        import java.sql.Date;
+import java.util.Date;
 
-        import jakarta.persistence.Entity;
-        import jakarta.persistence.GeneratedValue;
-        import jakarta.persistence.GenerationType;
-        import jakarta.persistence.Id;
-        import jakarta.persistence.Table;
-        import jakarta.persistence.*;
-        import java.sql.Date;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -22,12 +16,16 @@ public class RecruteurModel {
     private String email;
     private String mdp;
     private String secteur;
-    private int tel;
+    private String tel;
+    private String photoBase64;
     private byte[] photo;
-    private Date date_naissence;
+    private String descPhoto;
+    @Temporal(TemporalType.DATE)
+    private Date date_naissance= new Date();
     private String description;
-    private String Entreprise;
-    private Date date_inscrit;
+    private String entreprise;
+    @Temporal(TemporalType.DATE)
+    private Date date_inscri= new Date(); 
 
 
     public RecruteurModel() {
@@ -81,11 +79,11 @@ public class RecruteurModel {
         this.secteur = Secteur;
     }
 
-    public int getTel() {
+    public String getTel() {
         return this.tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
@@ -93,16 +91,16 @@ public class RecruteurModel {
         return this.photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto( byte[] photo) {
         this.photo = photo;
     }
 
     public Date getDate_naissence() {
-        return this.date_naissence;
+        return this.date_naissance;
     }
 
     public void setDate_naissence(Date date_naissence) {
-        this.date_naissence = date_naissence;
+        this.date_naissance = date_naissence;
     }
 
     public String getDescription() {
@@ -114,20 +112,34 @@ public class RecruteurModel {
     }
 
     public String getEntreprise() {
-        return this.Entreprise;
+        return this.entreprise;
     }
 
     public void setEntreprise(String Entreprise) {
-        this.Entreprise = Entreprise;
+        this.entreprise = Entreprise;
     }
 
-    public Date getDate_inscrit() {
-        return this.date_inscrit;
+    public Date getDate_inscri() {
+        return this.date_inscri;
     }
 
     public void setDate_inscrit(Date date_inscrit) {
-        this.date_inscrit = date_inscrit;
+        this.date_inscri = date_inscrit;
+    }
+ public String getPhotoBase64() {
+        return photoBase64;
     }
 
+    public void setPhotoBase64(String photoBase64) {
+        this.photoBase64 = photoBase64;
+    }
+
+        public String getDescPhoto() {
+        return descPhoto;
+    }
+
+    public void setDescPhoto(String descPhoto) {
+        this.descPhoto = descPhoto;
+    }
 
 }
