@@ -59,8 +59,8 @@ public class CandidatController {
         CandidatModel Candidat = service.getCandidat(id);
         service.deletCandidat(Candidat);
      }
-     @RequestMapping(value="/updateCandidat/{id}", method=RequestMethod.PUT)
-         public CandidatModel updateCandidatById(@PathVariable Long id, @RequestBody CandidatModel Candidat){
+     @RequestMapping(value="/updateCandidat", method=RequestMethod.PUT)
+         public CandidatModel updateCandidatById(@RequestBody CandidatModel Candidat){
             return service.updateCandidat(Candidat);
          }
      
