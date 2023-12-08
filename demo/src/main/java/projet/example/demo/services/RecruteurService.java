@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import projet.example.demo.models.CandidatModel;
 import projet.example.demo.models.RecruteurModel;
 import projet.example.demo.repository.RecruteurRepository;
 
@@ -30,6 +29,12 @@ public class RecruteurService {
     }
     
     public RecruteurModel addRecruteur(RecruteurModel Recruteur){
+        return rep.save(Recruteur);
+    }
+    public void deletRecruteur(RecruteurModel Recruteur){
+        rep.delete(Recruteur);
+    }
+    public RecruteurModel updateRecruteur(RecruteurModel Recruteur){
         return rep.save(Recruteur);
     }
 }

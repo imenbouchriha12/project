@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +17,19 @@ public class CandidatureModel {
     private Long id_condidature;
     private Date date;
     private int statut;
+    @Lob
     private byte[] cv;
+    private String cvFileName;
+
+
+    public String getCvFileName() {
+        return cvFileName;
+    }
+
+
+    public void setCvFileName(String cvFileName) {
+        this.cvFileName = cvFileName;
+    }
 
 
     public CandidatureModel() {

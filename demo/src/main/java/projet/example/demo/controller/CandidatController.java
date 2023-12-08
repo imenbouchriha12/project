@@ -54,5 +54,14 @@ public class CandidatController {
          return null ;
 
      }
+     @RequestMapping(value = "/deleteCandidat/{id}",method = RequestMethod.DELETE)
+     public void deleteCandidatById(@PathVariable Long id){
+        CandidatModel Candidat = service.getCandidat(id);
+        service.deletCandidat(Candidat);
+     }
+     @RequestMapping(value="/updateCandidat/{id}", method=RequestMethod.PUT)
+         public CandidatModel updateCandidatById(@PathVariable Long id, @RequestBody CandidatModel Candidat){
+            return service.updateCandidat(Candidat);
+         }
      
     }

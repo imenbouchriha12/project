@@ -55,5 +55,13 @@ public class RecruteurController {
          return null ;
 
      }
-
+          @RequestMapping(value = "/deleteRecruteur/{id}",method = RequestMethod.DELETE)
+     public void deleteRecruteurById(@PathVariable Long id){
+        RecruteurModel Recruteur = service.getrecruteur(id);
+        service.deletRecruteur(Recruteur);
+     }
+     @RequestMapping(value="/updateRecruteur/{id}", method=RequestMethod.PUT)
+         public RecruteurModel updateRecruteurById(@PathVariable Long id, @RequestBody RecruteurModel Recruteur){
+            return service.updateRecruteur(Recruteur);
+         }
 }

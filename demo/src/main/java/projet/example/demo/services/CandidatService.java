@@ -30,4 +30,10 @@ public class CandidatService {
     public CandidatModel addCandidat(CandidatModel Candidat){
         return rep.save(Candidat);
     }
+    public void deletCandidat(CandidatModel Candidat){
+        rep.delete(Candidat);
+    }
+    public CandidatModel updateCandidat(CandidatModel Candidat){
+        return rep.save(Candidat);
+    }
 }
