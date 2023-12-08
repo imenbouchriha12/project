@@ -15,11 +15,11 @@ public class OffreEmploieModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_offre;
     private String titre;
-    private double description;
+    private String description;
     private Date date_expiration;
     private String lieu;
     private  String nom_societe;
-    private int nbr_max_condidat;
+    private int nbr_max_candidat;
     private int nbr__post;
     private String niveau_etude;
     private int etat;
@@ -43,11 +43,11 @@ public class OffreEmploieModel {
         this.titre = titre;
     }
 
-    public double getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
-    public void setDescription(double description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -75,12 +75,12 @@ public class OffreEmploieModel {
         this.nom_societe = nom_societe;
     }
 
-    public int getNbr_max_condidat() {
-        return this.nbr_max_condidat;
+    public int getNbr_max_candidat() {
+        return this.nbr_max_candidat;
     }
 
-    public void setNbr_max_condidat(int nbr_max_condidat) {
-        this.nbr_max_condidat = nbr_max_condidat;
+    public void setNbr_max_candidat(int nbr_max_candidat) {
+        this.nbr_max_candidat = nbr_max_candidat;
     }
 
     public int getNbr__post() {
