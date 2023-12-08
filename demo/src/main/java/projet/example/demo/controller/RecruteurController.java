@@ -60,8 +60,24 @@ public class RecruteurController {
         RecruteurModel Recruteur = service.getrecruteur(id);
         service.deletRecruteur(Recruteur);
      }
-     @RequestMapping(value="/updateRecruteur/{id}", method=RequestMethod.PUT)
-         public RecruteurModel updateRecruteurById(@PathVariable Long id, @RequestBody RecruteurModel Recruteur){
-            return service.updateRecruteur(Recruteur);
+     @RequestMapping(value="/updateRecruteur", method=RequestMethod.PUT)
+         public void updateRecruteurById( @RequestBody RecruteurModel Recruteur){
+        
+RecruteurModel r=service.getrecruteur(Recruteur.getId_recruteur());
+
+r.setNom(Recruteur.getNom());
+r.setPrenom(Recruteur.getPrenom());
+r.setEmail(Recruteur.getEmail());
+r.setSecteur(Recruteur.getSecteur());
+r.setEntreprise(Recruteur.getEntreprise());
+r.setPhoto(Recruteur.getPhoto());
+r.setDescPhoto(Recruteur.getDescPhoto());
+r.setDescription(Recruteur.getDescription());
+r.setTel(Recruteur.getTel());
+r.setDate_naissance(Recruteur.getDate_naissance());
+r.setPhotoBase64(Recruteur.getPhotoBase64());
+
+
+ service.updateRecruteur(r);
          }
 }

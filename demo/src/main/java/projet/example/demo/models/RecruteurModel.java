@@ -17,6 +17,7 @@ public class RecruteurModel {
     private String mdp;
     private String secteur;
     private String tel;
+    @Column(columnDefinition="MEDIUMTEXT")
     private String photoBase64;
     private byte[] photo;
     private String descPhoto;

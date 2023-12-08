@@ -18,7 +18,7 @@ import jakarta.persistence.TemporalType;
 public class CandidatModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_condidat;
+    private Long id_candidat;
     private String nom;
     private String prenom;
     private String email;
@@ -65,12 +65,12 @@ public class CandidatModel {
     public CandidatModel() {
     }
 
-    public Long getId_condidat() {
-        return this.id_condidat;
+    public Long getId_candidat() {
+        return this.id_candidat;
     }
 
-    public void setId_condidat(Long id_condidat) {
-        this.id_condidat = id_condidat;
+    public void setId_candidat(Long id_candidat) {
+        this.id_candidat = id_candidat;
     }
 
     public String getNom() {

@@ -60,8 +60,20 @@ public class CandidatController {
         service.deletCandidat(Candidat);
      }
      @RequestMapping(value="/updateCandidat", method=RequestMethod.PUT)
-         public CandidatModel updateCandidatById(@RequestBody CandidatModel Candidat){
-            return service.updateCandidat(Candidat);
+         public void updateCandidatById(@RequestBody CandidatModel Candidat){
+            CandidatModel c=service.getCandidat(Candidat.getId_candidat());
+
+c.setNom(Candidat.getNom());
+c.setPrenom(Candidat.getPrenom());
+c.setEmail(Candidat.getEmail());
+c.setSecteur(Candidat.getSecteur());
+c.setPhoto(Candidat.getPhoto());
+c.setDescPhoto(Candidat.getDescPhoto());
+c.setDescription(Candidat.getDescription());
+c.setTel(Candidat.getTel());
+c.setDate_naissance(Candidat.getDate_naissance());
+c.setPhotoBase64(Candidat.getPhotoBase64());
+             service.updateCandidat(c);
          }
      
     }
