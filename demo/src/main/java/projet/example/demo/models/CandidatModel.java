@@ -121,11 +121,11 @@ public class CandidatModel {
         this.secteur = secteur;
     }
 
-    public Date getDate_naissence() {
+    public Date getDate_naissance() {
         return this.date_naissance;
     }
 
-    public void setDate_naissence(Date date_naissance) {
+    public void setDate_naissance(Date date_naissance) {
         this.date_naissance = date_naissance;
     }
 
