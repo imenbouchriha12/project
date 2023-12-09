@@ -1,16 +1,15 @@
 package projet.example.demo.models;
 
 
-
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -36,14 +35,21 @@ public class CandidatModel {
         private String photoBase64;
     private byte[] photo;
     private String descPhoto;
+    @OneToMany(mappedBy = "id_candidature")
+    private List<CandidatureModel> candidatures ;
+    @OneToMany(mappedBy = "id_offre")
+    private List<OffreEmploieModel> offres ;
 
-    
- @ManyToOne
-    @JoinColumn(name = "condidature_id")
-    private CandidatureModel Candidat;
 
-    
     public CandidatModel() {
+    }
+   
+        public List<OffreEmploieModel> getOffres() {
+        return this.offres;
+    }
+
+    public void setOffres(List<OffreEmploieModel> offres) {
+        this.offres = offres;
     }
     
 
@@ -151,14 +157,15 @@ public class CandidatModel {
         this.descPhoto = descPhoto;
     }
 
-    public CandidatureModel getCandidat() {
-        return this.Candidat;
+    public List<CandidatureModel> getCandidatures() {
+        return this.candidatures;
     }
 
-    public void setCandidat(CandidatureModel Candidat) {
-        this.Candidat = Candidat;
+    public void setCandidatures(List<CandidatureModel> candidatures) {
+        this.candidatures = candidatures;
     }
-    
+
+   
  
     
 }

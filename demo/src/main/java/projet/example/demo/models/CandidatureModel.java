@@ -6,8 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,11 +22,20 @@ public class CandidatureModel {
     @Lob
     private byte[] cv;
     private String cvFileName;
+     @ManyToOne
+    @JoinColumn(name = "candidat_id")
+    private CandidatModel candidat;
+    @ManyToOne
+    @JoinColumn(name = "offre_id")
+    private OffreEmploieModel OffreEmploie;
+
+
 
 
 
     public CandidatureModel() {
     }
+
 
     public Long getId_candidature() {
         return this.id_candidature;
@@ -67,7 +77,22 @@ public class CandidatureModel {
         this.cvFileName = cvFileName;
     }
 
+    public CandidatModel getCandidat() {
+        return this.candidat;
+    }
 
+    public void setCandidat(CandidatModel candidat) {
+        this.candidat = candidat;
+    }
+
+    public OffreEmploieModel getOffreEmploie() {
+        return this.OffreEmploie;
+    }
+
+    public void setOffreEmploie(OffreEmploieModel OffreEmploie) {
+        this.OffreEmploie = OffreEmploie;
+    }
+   
 
 
 
