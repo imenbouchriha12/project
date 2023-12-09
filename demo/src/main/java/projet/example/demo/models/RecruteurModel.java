@@ -27,9 +27,7 @@ public class RecruteurModel {
     private String entreprise;
     @Temporal(TemporalType.DATE)
     private Date date_inscri= new Date(); 
-    @ManyToOne
-    @JoinColumn(name = "OffreEmploie")
-    private OffreEmploieModel  OffreEmploie;
+   
 
 
     public RecruteurModel() {
@@ -149,13 +147,7 @@ public class RecruteurModel {
         this.date_inscri = date_inscri;
     }
 
-    public OffreEmploieModel getOffreEmploie() {
-        return this.OffreEmploie;
-    }
-
-    public void setOffreEmploie(OffreEmploieModel OffreEmploie) {
-        this.OffreEmploie = OffreEmploie;
-    }
+   
   
 
 }

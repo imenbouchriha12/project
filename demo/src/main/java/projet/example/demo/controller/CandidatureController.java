@@ -62,8 +62,8 @@ public class CandidatureController {
         CandidatureModel Candidature = service.getCandidature(id);
         service.deletCandidature(Candidature);
      }
-     @RequestMapping(value="/updateCandidature/{id}", method=RequestMethod.PUT)
-         public CandidatureModel updateCandidatureById(@PathVariable Long id, @RequestBody CandidatureModel Candidature){
+     @RequestMapping(value="/updateCandidature", method=RequestMethod.PUT)
+         public CandidatureModel updateCandidatureById( @RequestBody CandidatureModel Candidature){
             return service.updateCandidature(Candidature);
          }
 }

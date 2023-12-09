@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -25,8 +27,9 @@ public class OffreEmploieModel {
     private int nbr__post;
     private String niveau_etude;
     private int etat;
-
-
+    @ManyToOne
+    @JoinColumn(name = "id_recruteur")
+    private RecruteurModel recruteur;
 
     public OffreEmploieModel() {
     }
@@ -110,9 +113,16 @@ public class OffreEmploieModel {
     public int getEtat() {
         return this.etat;
     }
-
-    public void setEtat(int etat) {
-        this.etat = etat;
+       public void setEtat(int etat) {
+         this.etat=etat;
+    }   
+        public RecruteurModel getRecruteur() {
+        return this.recruteur;
     }
+    public void setRecruteur(RecruteurModel recruteur) {
+        this.recruteur = recruteur;
+    }
+
+
 
 }

@@ -28,7 +28,7 @@ public class CandidatModel {
     private String prenom;
     private String email;
     private String mdp;
-    private Long tel;
+    private String tel;
     private String secteur;
      @Temporal(TemporalType.DATE)
     private Date date_naissance = new Date(); 
@@ -96,11 +96,11 @@ public class CandidatModel {
         this.mdp = mdp;
     }
 
-    public Long getTel() {
+    public String getTel() {
         return this.tel;
     }
 
-    public void setTel(Long tel) {
+    public void setTel(String    tel) {
         this.tel = tel;
     }
 
