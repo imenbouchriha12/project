@@ -25,11 +25,20 @@ public class CandidatController {
     CandidatService service;
     @RequestMapping(value="/Candidats", method=RequestMethod.GET)
     List<CandidatModel> getAll(){
-        return service.getAll();
+         List<CandidatModel> candidas= service.getAll();
+         for (CandidatModel candidatModel : candidas) {
+            candidatModel.setMdp("****");
+         }
+         return candidas;
     }
     @RequestMapping(value = "/Candidats/{id}",method = RequestMethod.GET)
     CandidatModel getCandidatbyid(@PathVariable Long id){
-        return service.getCandidat(id);
+            CandidatModel Candidat= service.getCandidat(id);
+            Candidat.setMdp("****");
+           return Candidat;
+
+
+
      }
      @PostMapping("/addCandidat")
      CandidatModel addCandidat(@RequestBody CandidatModel Candidat){

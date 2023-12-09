@@ -4,6 +4,9 @@ package projet.example.demo.models;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,6 +16,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name="Candidat")
@@ -35,8 +39,7 @@ public class CandidatModel {
         private String photoBase64;
     private byte[] photo;
     private String descPhoto;
-    @OneToMany(mappedBy = "id_candidature")
-    private List<CandidatureModel> candidatures ;
+   
     @OneToMany(mappedBy = "id_offre")
     private List<OffreEmploieModel> offres ;
 
@@ -157,15 +160,6 @@ public class CandidatModel {
         this.descPhoto = descPhoto;
     }
 
-    public List<CandidatureModel> getCandidatures() {
-        return this.candidatures;
-    }
-
-    public void setCandidatures(List<CandidatureModel> candidatures) {
-        this.candidatures = candidatures;
-    }
-
-   
  
     
 }

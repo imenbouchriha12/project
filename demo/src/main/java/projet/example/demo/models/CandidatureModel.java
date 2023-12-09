@@ -2,6 +2,8 @@ package projet.example.demo.models;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,9 +26,11 @@ public class CandidatureModel {
     private String cvFileName;
      @ManyToOne
     @JoinColumn(name = "candidat_id")
+    
     private CandidatModel candidat;
     @ManyToOne
     @JoinColumn(name = "offre_id")
+   
     private OffreEmploieModel OffreEmploie;
 
 

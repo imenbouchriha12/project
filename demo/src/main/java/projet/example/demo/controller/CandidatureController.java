@@ -28,7 +28,11 @@ public class CandidatureController {
     CandidatureService service;
     @RequestMapping(value="/Candidatures", method=RequestMethod.GET)
     List<CandidatureModel> getAll(){
-        return service.getAll();
+        List<CandidatureModel> candidatures= service.getAll();
+        for (CandidatureModel candidatureModel : candidatures) {
+            candidatureModel.getCandidat().setMdp("****");
+        }
+        return candidatures;
     }
     @RequestMapping(value = "/Candidatures/{id}",method = RequestMethod.GET)
     CandidatureModel getCandidaturebyid(@PathVariable Long id){

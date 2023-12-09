@@ -26,9 +26,6 @@ public class OffreEmploieModel {
     private String niveau_etude;
     private int etat;
 
-    @OneToMany(mappedBy = "id_candidature")
-    private List<CandidatureModel> candidatures ;
-   
 
 
     public OffreEmploieModel() {
@@ -118,11 +115,4 @@ public class OffreEmploieModel {
         this.etat = etat;
     }
 
-    public List<CandidatureModel> getCandidatures() {
-        return this.candidatures;
-    }
-
-    public void setCandidatures(List<CandidatureModel> candidatures) {
-        this.candidatures = candidatures;
-    }
 }
