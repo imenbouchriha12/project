@@ -27,10 +27,14 @@ public class RecruteurModel {
     private String entreprise;
     @Temporal(TemporalType.DATE)
     private Date date_inscri= new Date(); 
+    @ManyToOne
+    @JoinColumn(name = "OffreEmploie")
+    private OffreEmploieModel  OffreEmploie;
 
 
     public RecruteurModel() {
     }
+
 
     public Long getId_recruteur() {
         return this.id_recruteur;
@@ -76,8 +80,8 @@ public class RecruteurModel {
         return this.secteur;
     }
 
-    public void setSecteur(String Secteur) {
-        this.secteur = Secteur;
+    public void setSecteur(String secteur) {
+        this.secteur = secteur;
     }
 
     public String getTel() {
@@ -88,12 +92,28 @@ public class RecruteurModel {
         this.tel = tel;
     }
 
+    public String getPhotoBase64() {
+        return this.photoBase64;
+    }
+
+    public void setPhotoBase64(String photoBase64) {
+        this.photoBase64 = photoBase64;
+    }
+
     public byte[] getPhoto() {
         return this.photo;
     }
 
-    public void setPhoto( byte[] photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
+    }
+
+    public String getDescPhoto() {
+        return this.descPhoto;
+    }
+
+    public void setDescPhoto(String descPhoto) {
+        this.descPhoto = descPhoto;
     }
 
     public Date getDate_naissance() {
@@ -103,6 +123,7 @@ public class RecruteurModel {
     public void setDate_naissance(Date date_naissance) {
         this.date_naissance = date_naissance;
     }
+
 
     public String getDescription() {
         return this.description;
@@ -116,31 +137,25 @@ public class RecruteurModel {
         return this.entreprise;
     }
 
-    public void setEntreprise(String Entreprise) {
-        this.entreprise = Entreprise;
+    public void setEntreprise(String entreprise) {
+        this.entreprise = entreprise;
     }
 
     public Date getDate_inscri() {
         return this.date_inscri;
     }
 
-    public void setDate_inscrit(Date date_inscrit) {
-        this.date_inscri = date_inscrit;
-    }
- public String getPhotoBase64() {
-        return photoBase64;
+    public void setDate_inscri(Date date_inscri) {
+        this.date_inscri = date_inscri;
     }
 
-    public void setPhotoBase64(String photoBase64) {
-        this.photoBase64 = photoBase64;
+    public OffreEmploieModel getOffreEmploie() {
+        return this.OffreEmploie;
     }
 
-        public String getDescPhoto() {
-        return descPhoto;
+    public void setOffreEmploie(OffreEmploieModel OffreEmploie) {
+        this.OffreEmploie = OffreEmploie;
     }
-
-    public void setDescPhoto(String descPhoto) {
-        this.descPhoto = descPhoto;
-    }
+  
 
 }

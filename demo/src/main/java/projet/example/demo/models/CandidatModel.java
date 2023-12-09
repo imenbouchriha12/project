@@ -9,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -35,35 +37,15 @@ public class CandidatModel {
     private byte[] photo;
     private String descPhoto;
 
-
-    public Date getDate_inscri() {
-        return date_inscri;
-    }
-
-    public void setDate_inscri(Date date_inscri) {
-        this.date_inscri = date_inscri;
-    }
-
-    public String getDescPhoto() {
-        return descPhoto;
-    }
-
-    public void setDescPhoto(String descPhoto) {
-        this.descPhoto = descPhoto;
-    }
-
-    public String getPhotoBase64() {
-        return photoBase64;
-    }
-
-    public void setPhotoBase64(String photoBase64) {
-        this.photoBase64 = photoBase64;
-    }
+    
+ @ManyToOne
+    @JoinColumn(name = "condidature_id")
+    private CandidatureModel Candidat;
 
     
-
     public CandidatModel() {
     }
+    
 
     public Long getId_candidat() {
         return this.id_candidat;
@@ -129,12 +111,28 @@ public class CandidatModel {
         this.date_naissance = date_naissance;
     }
 
+    public Date getDate_inscri() {
+        return this.date_inscri;
+    }
+
+    public void setDate_inscri(Date date_inscri) {
+        this.date_inscri = date_inscri;
+    }
+
     public String getDescription() {
         return this.Description;
     }
 
     public void setDescription(String Description) {
         this.Description = Description;
+    }
+
+    public String getPhotoBase64() {
+        return this.photoBase64;
+    }
+
+    public void setPhotoBase64(String photoBase64) {
+        this.photoBase64 = photoBase64;
     }
 
     public byte[] getPhoto() {
@@ -145,6 +143,22 @@ public class CandidatModel {
         this.photo = photo;
     }
 
+    public String getDescPhoto() {
+        return this.descPhoto;
+    }
 
+    public void setDescPhoto(String descPhoto) {
+        this.descPhoto = descPhoto;
+    }
+
+    public CandidatureModel getCandidat() {
+        return this.Candidat;
+    }
+
+    public void setCandidat(CandidatureModel Candidat) {
+        this.Candidat = Candidat;
+    }
+    
+ 
     
 }
