@@ -91,5 +91,15 @@ c.setPhotoBase64(Candidat.getPhotoBase64());
             candidat.getFavoris().add(favoris);
             service.updateCandidat(candidat);
          }
+         @RequestMapping(value = "/deleteFavorite/{id}", method=RequestMethod.DELETE)
+         public void deleteFavorite(@PathVariable Long id, @RequestBody OffreEmploieModel favoris) {
+             CandidatModel candidat = service.getCandidat(id);
+             candidat.getFavoris().remove(favoris);
+             service.updateCandidat(candidat);
+         }
+
+
+}
+
      
-    }
+    
