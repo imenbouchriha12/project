@@ -84,5 +84,12 @@ c.setDate_naissance(Candidat.getDate_naissance());
 c.setPhotoBase64(Candidat.getPhotoBase64());
              service.updateCandidat(c);
          }
+
+      @RequestMapping(value="/addFavorite/{id}", method=RequestMethod.PUT)
+         public void addFavorite(@PathVariable Long id,@RequestBody OffreEmploieModel favoris){
+            CandidatModel candidat=service.getCandidat(id);
+            candidat.getFavoris().add(favoris);
+            service.updateCandidat(candidat);
+         }
      
     }

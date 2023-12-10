@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,13 +31,9 @@ public class OffreEmploieModel {
     @ManyToOne
     @JoinColumn(name = "id_recruteur")
     private RecruteurModel recruteur;
+  
 
-    public OffreEmploieModel() {
-    }
 
- 
-
-   
 
     public Long getId_offre() {
         return this.id_offre;
